@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState,useEffect } from 'react';
+import { Link,useLocation } from 'react-router-dom';
 import './../Components/MainNavigation.css';
 const NavBar = () => {
 
     const [activeElement, setActiveElement] = useState('home');
+    const location = useLocation();
 
-    const onClickActive = (event) => {
-        setActiveElement(event);
-        console.log(event);
-    };
+    useEffect(() => {
+        // Extract the slug from the current URL path (e.g., "/about-us" -> "about-us")
+        const slug = location.pathname.split('/')[1];
+        setActiveElement(slug || 'home'); // If slug is empty, set 'home' as the active element
+      }, [location]);
 
     return (
         <header className='header'>
@@ -20,8 +22,7 @@ const NavBar = () => {
                     <li>
                         <Link
                             to='/'
-                            className={activeElement === 'home' ? 'active' : ''}
-                            onClick={() => onClickActive('home')}>
+                            className={activeElement === 'home' ? 'active' : ''}>
                             Home
                         </Link>
                     </li>
@@ -29,7 +30,7 @@ const NavBar = () => {
                         <Link
                             to='/about-us'
                             className={activeElement === 'about' ? 'active' : ''}
-                            onClick={() => onClickActive('about')}
+                            
                         >
                             About us
                         </Link>
@@ -37,12 +38,12 @@ const NavBar = () => {
                     <li>
                         <Link to='/blogs'
                             className={activeElement === 'blogs' ? 'active' : ''}
-                            onClick={() => onClickActive('blogs')}>Blogs</Link>
+                            >Blogs</Link>
                     </li>
                     <li>
                         <Link to='/write-post'
                             className={activeElement === 'write-post' ? 'active' : ''}
-                            onClick={() => onClickActive('write-post')}>Write Post</Link>
+                            >Write Post</Link>
                     </li>
                 </ul>
             </div>
