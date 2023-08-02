@@ -1,8 +1,8 @@
 import classes from './SepCard.module.css';
-
+import { Link } from 'react-router-dom';
 import React from 'react';
 
-const SepCard = ({ heading, author, image, content }) => {
+const SepCard = ({ heading, author, image, content,id }) => {
  
 
   return (
@@ -12,9 +12,8 @@ const SepCard = ({ heading, author, image, content }) => {
         <h2>{heading}</h2>
         <p>By <i>{author}</i></p>
         <p className={classes.content}>{content}</p>
-        <button className={classes.button}>Read More</button>
+        <Link to={`/readmore/${id}`}><button className={classes.button}>Read More</button></Link>
       </div>
-
     </div>
   );
 };

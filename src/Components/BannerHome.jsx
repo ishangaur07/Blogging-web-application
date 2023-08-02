@@ -9,7 +9,6 @@ const BannerHome = ()=>{
         </div>
         <div className={classes.rightContent}>
         </div>
-       
     </div>
 }
 

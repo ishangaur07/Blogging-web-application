@@ -16,6 +16,7 @@ const Blogs = () => {
       // Convert the snapshot to an array of blogs
       const blogsData = snapshot.val();
       setBlogs(blogsData);
+      console.log(blogsData);
     });
 
     // Unsubscribe from the Firebase database when the component unmounts
@@ -29,12 +30,13 @@ const Blogs = () => {
     const words = paragraph.split(' ');
     return words.slice(0, 44).join(' ');
   };
-
+ 
   return (
     <div className={classes.container}>
       {Object.keys(blogs).map((blogId) => (
-        <SepCard 
+        <SepCard
         key={blogId} 
+        id={blogId} 
         image={blogs[blogId].imageUrl}
         heading={blogs[blogId].heading} 
         author={blogs[blogId].author}
@@ -42,6 +44,7 @@ const Blogs = () => {
       ))}
     </div>
   );
+  
 };
 
 export default Blogs;
