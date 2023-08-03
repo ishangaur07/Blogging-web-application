@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import React, {useState,useEffect} from "react";
 import firebase from '../firebase/FirebaseConfig'; 
 import { getDatabase, ref, onValue, off } from 'firebase/database';
+import BlogDesc from "../Components/UI/BlogDesc";
 const BlogDetail = () => {
     const params = useParams();
     const [blog, setBlogs] = useState(null);
@@ -33,9 +34,12 @@ const BlogDetail = () => {
       <>
       {blog ? (
         <>
-        <h1>{blog.author}</h1>
-        <p>{blog.content}</p>
-  
+        <BlogDesc 
+        heading={blog.heading}
+        image={blog.imageUrl}
+        author={blog.author}
+        content={blog.paragraph}
+        ></BlogDesc>
         </>
       ) : (
         <p>Loading...</p>

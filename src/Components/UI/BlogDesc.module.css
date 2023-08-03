@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+section{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.container{
+    max-width:1440px;
+    margin: auto;
+   display: flex;
+   flex-direction: column;
+   gap: 24px;
+   text-align: center;
+   align-items: center;
+}
+
+.container h1{
+    font-size: 45px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.container img{
+    width: 60%;
+    
+}
+
+.container p{
+    text-align: left;
+}

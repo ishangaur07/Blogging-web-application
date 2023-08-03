@@ -16,7 +16,6 @@ const Blogs = () => {
       // Convert the snapshot to an array of blogs
       const blogsData = snapshot.val();
       setBlogs(blogsData);
-      console.log(blogsData);
     });
 
     // Unsubscribe from the Firebase database when the component unmounts
