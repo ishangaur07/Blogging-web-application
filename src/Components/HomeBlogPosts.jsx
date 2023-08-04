@@ -41,6 +41,7 @@ const HomeBlogPosts = () => {
 
       <BlogItem 
       key={blogId} 
+      id={blogId}
       image={blogs[blogId].imageUrl}
       heading={blogs[blogId].heading} 
       author={blogs[blogId].author}

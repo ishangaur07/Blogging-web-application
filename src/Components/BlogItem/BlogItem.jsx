@@ -1,18 +1,18 @@
 import classes from './BlogItem.module.css';
 import { Link } from 'react-router-dom';
 
-const BlogItem = (props) => {
+const BlogItem = ({ heading, author, image, content,id }) => {
     
     return (
     <li className={classes.blog}>
         <div className={classes.blogInfo}>
-            <h2>{props.heading}</h2>
-            <div className={classes.author}>By {props.author}</div>
-            <div>{props.content}</div>
-            <Link to="/read-more"><button className={classes.btn} >Read More</button></Link>
+            <h2>{heading}</h2>
+            <div className={classes.author}>By {author}</div>
+            <div>{content}</div>
+            <Link to={`/readmore/${id}`}><button className={classes.btn} >Read More</button></Link>
         </div>
         <div className={classes.image}>
-            <img src={props.image} alt="blog" srcset="" />
+            <img src={image} alt="blog" srcset="" />
         </div>
     </li>
     )

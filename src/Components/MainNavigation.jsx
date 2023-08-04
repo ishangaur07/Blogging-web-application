@@ -15,7 +15,8 @@ const NavBar = () => {
     return (
         <header className='header'>
             <div className='logo'>
-                <img src='https://miro.medium.com/v2/resize:fit:8978/1*s986xIGqhfsN8U--09_AdA.png' alt='important'></img>
+                <Link to='/'><img src='https://miro.medium.com/v2/resize:fit:8978/1*s986xIGqhfsN8U--09_AdA.png' alt='important'></img></Link>
+                
             </div>
             <div className='list-block'>
                 <ul className="list">
@@ -29,7 +30,7 @@ const NavBar = () => {
                     <li>
                         <Link
                             to='/about-us'
-                            className={activeElement === 'about' ? 'active' : ''}
+                            className={activeElement === 'about-us' ? 'active' : ''}
                             
                         >
                             About us
