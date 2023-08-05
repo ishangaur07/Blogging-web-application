@@ -10,11 +10,11 @@
     gap: 30px;
     flex-wrap: wrap;
     margin-bottom: 30px;
-    padding: 0 40px;
+    
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
+@media (max-width: 968px) {
     .container {
       flex-direction: column-reverse;
     }
@@ -35,8 +35,8 @@
   }
   
   @media (max-width: 480px) {
-    .btn {
-      font-size: 14px;
+    .container {
+    padding: 0 0;
     }
   
     .leftContent h1 {

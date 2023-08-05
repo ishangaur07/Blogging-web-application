@@ -1,9 +1,11 @@
 .blog {
     display: flex;
     justify-content: space-between;
-    margin: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #ccc;
+    gap: 40px;
+    padding-left:40px;
+    padding-right:40px;
   }
   .author{
     font-style: italic;
@@ -19,7 +21,7 @@
   }
   
   .image img{
-    width: 30rem;
+    width: 100%;
     border-radius: 10px;
   }
 
@@ -39,30 +41,7 @@
   .blog {
     flex-direction: column-reverse;
     justify-content: center;
-    
-  }
-
-  .leftContent,
-  .rightContent {
-    width: 100%;
-  }
-
-  .rightContent {
-    margin-top: 20px;
-    height: 300px;
-  }
-
-  .leftContent h1 {
-    font-size: 72px;
-  }
-}
-
-@media (max-width: 480px) {
-  .btn {
-    font-size: 14px;
-  }
-
-  .leftContent h1 {
-    font-size: 48px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
