@@ -1,11 +1,12 @@
 import { useParams } from "react-router-dom";
 import React, {useState,useEffect} from "react";
 import firebase from '../firebase/FirebaseConfig'; 
-import { getDatabase, ref, onValue, off } from 'firebase/database';
+import { getDatabase, ref, onValue, off,remove } from 'firebase/database';
 import BlogDesc from "../Components/UI/BlogDesc";
 const BlogDetail = () => {
     const params = useParams();
     const [blog, setBlogs] = useState(null);
+
   
     useEffect(() => {
       // Fetch data from Firebase when the component mounts
@@ -30,6 +31,18 @@ const BlogDetail = () => {
       };
     }, [params.blogId]);
   
+    const handleDelete = async () => {
+      try {
+        // Delete the blog from Firebase using the blogId
+        const db = getDatabase();
+        const blogRef = ref(db, `blogs/${params.blogId}`);
+        await remove(blogRef);
+        setBlogs(null); // Clear the blog state after deletion
+      } catch (error) {
+        console.error('Error deleting blog:', error);
+      }
+    };
+
     return (
       <>
       {blog ? (
@@ -39,6 +52,7 @@ const BlogDetail = () => {
         image={blog.imageUrl}
         author={blog.author}
         content={blog.paragraph}
+        onDelete={handleDelete}
         ></BlogDesc>
         </>
       ) : (
