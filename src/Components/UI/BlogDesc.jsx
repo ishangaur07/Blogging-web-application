@@ -5,7 +5,8 @@ const BlogDesc = ({ heading, author, image, content, id,onDelete }) => {
     const handleDeleteClick = async ()=>{
         try{
             await onDelete(id);
-        }catch(error){
+        }
+        catch(error){
             console.error('Error deleting blog:', error);
         }
     }

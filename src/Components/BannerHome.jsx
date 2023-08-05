@@ -6,7 +6,7 @@ const BannerHome = ()=>{
         <div className={classes.leftContent}>
         <h1>Stay curious.</h1>
         <p>Discover stories, thinking, and expertise from writers on any topic.</p>
-       <Link to='/about-us'><button className={classes.btn}>Start Reading</button></Link>
+        <Link to='/about-us'><button className={classes.btn}>Start Reading</button></Link>
         </div>
         <div className={classes.rightContent}>
         </div>

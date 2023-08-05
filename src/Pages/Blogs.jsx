@@ -29,9 +29,12 @@ const Blogs = () => {
     const words = paragraph.split(' ');
     return words.slice(0, 44).join(' ');
   };
- 
+
   return (
-    <div className={classes.container}>
+    <>
+    {blogs ? (
+      <>
+      <div className={classes.container}>
       {Object.keys(blogs).map((blogId) => (
         <SepCard
         key={blogId} 
@@ -42,8 +45,12 @@ const Blogs = () => {
         content={extractFirst44Words(blogs[blogId].paragraph)} />
       ))}
     </div>
-  );
-  
+      </>
+    ) : (
+      <p>There is No blogs</p>
+    )}
+    </>
+  )
 };
 
 export default Blogs;

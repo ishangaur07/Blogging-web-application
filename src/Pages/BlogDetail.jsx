@@ -6,7 +6,7 @@ import BlogDesc from "../Components/UI/BlogDesc";
 const BlogDetail = () => {
     const params = useParams();
     const [blog, setBlogs] = useState(null);
-
+    
   
     useEffect(() => {
       // Fetch data from Firebase when the component mounts

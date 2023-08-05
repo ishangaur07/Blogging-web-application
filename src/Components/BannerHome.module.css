@@ -44,3 +44,37 @@
     box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.359);
     border-radius:33px
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .banner {
+      height: auto;
+      flex-direction: column-reverse;
+      padding: 0 30px;
+    }
+  
+    .leftContent,
+    .rightContent {
+      width: 100%;
+    }
+  
+    .rightContent {
+      margin-top: 20px;
+      height: 300px;
+    }
+  
+    .leftContent h1 {
+      font-size: 72px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .btn {
+      font-size: 14px;
+    }
+  
+    .leftContent h1 {
+      font-size: 48px;
+    }
+  }
+  

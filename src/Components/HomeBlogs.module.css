@@ -4,11 +4,42 @@
 }
 
 .container{
-    max-width: 85%;
     margin: auto auto;
     margin-top: 30px;
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
     margin-bottom: 30px;
+    padding: 0 40px;
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+      flex-direction: column-reverse;
+    }
+  
+    .leftContent,
+    .rightContent {
+      width: 100%;
+    }
+  
+    .rightContent {
+      margin-top: 20px;
+      height: 300px;
+    }
+  
+    .leftContent h1 {
+      font-size: 72px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .btn {
+      font-size: 14px;
+    }
+  
+    .leftContent h1 {
+      font-size: 48px;
+    }
+  }

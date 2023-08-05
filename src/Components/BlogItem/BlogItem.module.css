@@ -5,9 +5,6 @@
     padding-bottom: 1rem;
     border-bottom: 1px solid #ccc;
   }
-  .blogInfo{
-    
-  }
   .author{
     font-style: italic;
     font-size: 20px;
@@ -34,4 +31,38 @@
     color: white;
     cursor: pointer;
     margin-top: 20px;
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .blog {
+    flex-direction: column-reverse;
+    justify-content: center;
+    
+  }
+
+  .leftContent,
+  .rightContent {
+    width: 100%;
+  }
+
+  .rightContent {
+    margin-top: 20px;
+    height: 300px;
+  }
+
+  .leftContent h1 {
+    font-size: 72px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    font-size: 14px;
+  }
+
+  .leftContent h1 {
+    font-size: 48px;
+  }
 }
